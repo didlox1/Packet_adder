@@ -11,15 +11,16 @@ Through building this testbench, the following SystemVerilog features and verifi
 * **Verification Pipeline:** Constructing a standard verification architecture where data flows from Generator -> Driver -> DUT -> Monitor -> Scoreboard. (with a small exception needed for verification purposes - Driver -> Scoreboard)
 ## Project Structure
 * `rtl/` - Contains the Design Under Test (DUT) and the interface.
-  * `packet_adder.sv` - The pipelined adder module.
-  * `packet_adder_if.sv` - interface with `modport` definition.
+  * `packet_adder.sv` - The pipelined adder module.
+  * `packet_adder_if.sv` - interface with `modport` definition.
 * `tb/` - Contains the OOP testbench components.
-  * `tb_top.sv` - Top-level module instantiating the DUT, interface, and test.
-  * `test.sv` / `env.sv` - Test and Environment setup.
-  * `generator.sv` - Generates randomized transaction items, contains print method for debugging.
-  * `driver.sv` - Drives transactions into the DUT via the virtual interface.
-  * `monitor.sv` - Samples DUT signals and converts them back into transaction items.
-  * `scoreboard.sv` - Compares expected results against actual DUT outputs.
-  * `packet_adder_item.sv` - The transaction class with constraints.
+  * `tb_top.sv` - Top-level module instantiating the DUT, interface, and test.
+  * `test.sv` / `env.sv` - Test and Environment setup.
+  * `generator.sv` - Generates randomized transaction items, contains print method for debugging.
+  * `driver.sv` - Drives transactions into the DUT via the virtual interface.
+  * `monitor.sv` - Samples DUT signals and converts them back into transaction items.
+  * `scoreboard.sv` - Compares expected results against actual DUT outputs.
+  * `packet_adder_item.sv` - The transaction class with constraints.
 ## How to Run
+
 To run this project, you will need a SystemVerilog-compatible simulator (I used Vivado 2017.4).
